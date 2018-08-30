@@ -1,0 +1,171 @@
+@CHARSET "UTF-8";
+
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+}
+
+h2, h3, p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* indentation of information */
+h3, p {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#container1 h4{
+  margin: 0px;
+  color: #e0e0e0;
+}
+
+#home {
+  background-image: url(../../images/griffith_bkg.jpg);
+  background-position: right;
+  background-repeat: repeat-y;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#header, #footer {
+    font-weight: lighter;
+}
+
+#content {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Hide scrollbar using webkit */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#logo {
+  max-width: 35%; /* Mobile */
+}
+
+/* The div containers. Used flex layout to get the desired outcome */
+#container-wrapper {
+  padding: 5px;
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  position: relative;
+}
+
+.container {
+  color: white;
+  margin: 5px;
+  padding: 15px;
+  padding-top: 5px;
+  background-color: rgba(92,92,92,0.9);
+  border-radius: 10px;
+  align-items: stretch; /* Stretches the children to fit the parent container */
+  text-shadow: 0px 1px #000000;
+}
+
+#container1, #container2 {
+  overflow:hidden;
+  min-width: 20%;
+}
+
+#container3 {
+  min-width: 50%;
+  overflow: hidden;
+}
+
+.icons {
+  padding-top: 10px;
+  display: inline-block;
+}
+
+#printer {
+  padding-left: 5px;
+}
+
+#results-content-wrapper{
+  display: none;
+}
+
+/* Generic Styling of tables, for Desktops/Laptops */
+table {
+  width: 34em;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin:auto;
+}
+
+th {
+  background: #bf2424;
+  /* I like black too but consistency wise, it looked a bit off.
+  It highlights the headers in the tables when it has to highlight the contents.
+  But if you insist, we are good to go with black! */
+  color: white;
+  font-weight: bold;
+}
+
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#info-wrapper{
+  display:none;
+}
+
+
+/* Mobile */
+
+@media all and (max-width: 32em) {
+  /* Changes the layout to column when running on a mobile phone */
+
+  #content{
+    /* Allows users to scroll on a mobile browser */
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  #container-wrapper {
+    flex-direction: column;
+    -webkit-flex-direction: column; /* Safari */
+  }
+
+   th, td { font-size: 8pt; }
+
+   table { width: auto; }
+}
+
+/* Tablet */
+
+@media all and (min-width: 32em) and (max-width: 48em) {
+
+  /* Changes the layout to wrap when running on a tablet */
+  #content {
+    /* Allows users to scroll on a mobile browser */
+    overflow: scroll;
+    overflow-x:hidden;
+  }
+
+  #container-wrapper{
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap; /* Safari */
+  }
+
+  #container1, #container2 {
+    width: 44.7%;
+  }
+
+  #container3{
+    width: 100%;
+  }
+}
