@@ -1,365 +1,44 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)file:///C:/xampp/htdocs/iad/gpa/index.html -->
-<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="file:///C:/xampp/htdocs/iad/gpa/index.html">--><base href=".">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html class="ui-mobile">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href=".">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>GPA Calculator</title>
 
-	<title>GPA Calculator</title>
+    <link rel="shortcut icon" href="assets/images/griffith-hd.ico" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="assets/images/griffith.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="assets/images/griffith-hd.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/griffith.ico">
 
-	<link rel="shortcut icon" href="file:///C:/xampp/htdocs/iad/gpa/_/css/images/griffith-hd.ico" type="image/vnd.microsoft.icon">
-	<link rel="icon" href="file:///C:/xampp/htdocs/iad/gpa/_/css/images/griffith.ico" type="image/vnd.microsoft.icon">
-	<link rel="apple-touch-icon" href="file:///C:/xampp/htdocs/iad/gpa/_/css/images/griffith-hd.ico">
-	<link rel="apple-touch-icon-precomposed" href="file:///C:/xampp/htdocs/iad/gpa/_/css/griffth.ico">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.12.4.min.js.download"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js.download"></script>
 
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-<script src="js/jquery-1.12.4.min.js"></script>
-<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/custom-theme.css">
+    <link rel="stylesheet" href="css/custom-theme.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
 
-<link rel="stylesheet" href="css/custom-theme.css">
-<link rel="stylesheet" href="css/custom-theme.min.css">
-<link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+    <!-- Malihu Custom Scrollbar Plugin -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <script src="js/jquery.mCustomScrollbar.concat.min.js.download"></script>
 
-<!-- Malihu Custom Scrollbar Plugin -->
-<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-
-<script src="js/script.js"></script>
-<link type="text/css" rel="stylesheet" href="css/style.css">
+    <script src="js/script.js.download"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <body class="ui-mobile-viewport ui-overlay-b">
-	<div id="home" data-role="page" data-title="GPA Calculator" data-theme="b" data-url="home" tabindex="0" class="ui-page ui-page-theme-b ui-page-active">
-		<div data-role="header" id="header" role="banner" class="ui-header ui-bar-inherit">
-				<img src="./GPA Calculator_files/griffith-college-logo-1x.png" class="ui-button-left" alt="" id="logo">
-				<!-- <h1 style="display:inline-block; margin-top: 1em; margin-bottom:1em;">GPA Calculator</h1> -->
-		</div>
-		<div data-role="content" id="content" class="ui-content" role="main">
-			<!-- the containers are wrapped in a div and will be sorted accordingly with css -->
-			<div id="container-wrapper">
-				<div id="container1" class="container">
-					<h2>Grades</h2>
-						<div class="ui-select"><div id="list1-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span>Program</span><select id="list1">
-							<option value="" disabled="" selected="">Program</option>
-							<option value="Associate_Degree_in_Commerce__Business">Associate Degree in Commerce &amp; Business</option>
-							<option value="Diploma_of_Biosciences">Diploma of Biosciences</option>
-							<option value="Diploma_of_Commerce">Diploma of Commerce</option>
-							<option value="Diploma_of_Criminology__Criminal_Justice">Diploma of Criminology &amp; Criminal Justice</option>
-							<option value="Diploma_of_Design">Diploma of Design</option>
-							<option value="Diploma_of_Engineering">Diploma of Engineering</option>
-							<option value="Diploma_of_Health_Care">Diploma of Health Care</option>
-							<option value="Diploma_of_Health_Sciences">Diploma of Heath Sciences</option>
-							<option value="Diploma_of_Hotel_Management">Diploma of Hotel Management</option>
-							<option value="Diploma_of_Information_Technology">Diploma of Information Technology</option>
-							<option value="Diploma_of_Media__Communication">Diploma of Media &amp; Communication</option>
-							<option value="Diploma_of_Social__Psychological">Diploma of Social &amp; Psychological Science</option>
-							<option value="Foundation_Program">Foundation Program (Certificate IV)</option>
-						</select></div></div>
-            <div class="ui-select"><div id="list2-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span>I am...</span><select id="list2">
-              <option value="" disabled="" selected="">I am...</option>
-              <option value="domestic">Domestic Student</option>
-              <option value="international">International Student</option>
-            </select></div></div>
-						<form id="grades" method="post">
-						</form>
-					<!-- <button class="ui-btn" onClick="addInput('dynamicInput');">Add New</button> -->
-				</div>
-				<div id="container2" class="container">
-          <div id="results-wrapper">
-						<h2 id="results">Results</h2>
-						<div id="results-content-wrapper">
-							<div id="gpa" class="results"><h3>Total grade points: <span id="gpa-sample"></span></h3></div>
-							<div id="current_gpa" class="results"><h3>GPA: <span id="currentgpa-sample"></span></h3></div>
-							<span id="domestic_results">
-							<div id="qtac" class="results"><h3>QTAC Selection Rank: <span id="qtac-sample"></span></h3></div>
-						  <div id="atar" class="results"><h3>ATAR: <span id="atar-sample"></span></h3></div>
-							</span>
-	            <div style="text-align: right; font-style: oblique;"><a id="projection-info-link" class="ui-link">How do I project the GPA I need to meet my requirement?</a></div>
-						</div>
-          </div>
-          <br>
-          <div id="info-wrapper">
-            <h2>Further information</h2>
-						<div id="information">
-							<p>For details about the entry requirements for your Bachelor program at Griffith University, please refer to <span id="degree_link"><a href="https://degrees.griffith.edu.au/" alt="" class="ui-link">Griffith University Degree and Career Finder</a> or <a href="http://portal.griffithcollege.edu.au/feed/factsheets" alt="" class="ui-link">Griffith College program fact sheets</a></span></p>
-						</div>
-            <br>
-						<h2>Student Support</h2>
-						<p><a href="http://studentsupport.griffithcollege.edu.au/learning-support/study-assistance.html" <="" a="" class="ui-link">Peer Assisted Learning (PALs)</a></p><a href="http://studentsupport.griffithcollege.edu.au/learning-support/study-assistance.html" <="" a="" class="ui-link">
-						<h2>Help for Improving Your English</h2>
-						</a><p><a href="http://studentsupport.griffithcollege.edu.au/learning-support/study-assistance.html" <="" a="" class="ui-link"></a><a href="http://studentsupport.griffithcollege.edu.au/learning-support/english-language-development.html" <="" a="" class="ui-link">Help for Improving Your English</a></p><a href="http://studentsupport.griffithcollege.edu.au/learning-support/english-language-development.html" <="" a="" class="ui-link">
-						<br>
-  					</a><div id="email" class="icons"><a href="http://studentsupport.griffithcollege.edu.au/learning-support/english-language-development.html" <="" a="" class="ui-link">
-  						</a><a href="file:///C:/xampp/htdocs/iad/gpa/index.html" onclick="myFunction()" class="ui-link"><img src="./GPA Calculator_files/email.png" alt="email" style="height: 50px; width: 50px;"></a>
-  					</div>
-  					<div id="printer" class="icons">
-  						<a href="file:///C:/xampp/htdocs/iad/gpa/index.html" onclick="myprintFunction()" class="ui-link"><img src="./GPA Calculator_files/printer.png" alt="printer" style="height: 50px; width: 50px;"></a>
-  					</div>
-
-				  </div>
-
+    <div id="home" data-role="page" data-title="GPA Calculator" data-theme="b" data-url="home" tabindex="0" class="ui-page ui-page-theme-b ui-page-active">
+        <div data-role="header" id="header" role="banner" class="ui-header ui-bar-inherit">
+            <img src="assets/images/griffith-college-logo-1x.png" class="ui-button-left" alt="" id="logo">
         </div>
-				<div id="container3" class="container mCustomScrollbar _mCS_1 mCS-autoHide" style="height: 920px;"><div id="mCSB_1" class="mCustomScrollBox mCS-rounded-dark mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-							<h2>Grade Point Averages (GPA)</h2>
-							<h3>What is a Grade Point Average?</h3>
-							<p>A Grade Point Average (GPA) is used to assess success in your studies and to calculate admission rankings for applications to University.</p>
-							<p>A grade point average is the sum of the numerical grades for each course you have undertaken within the program you are studying, divided by the number of courses you have attempted.</p>
-							<p>The following is the grading system at Griffith College and Griffith University (and many other Australian universities):</p>
-
-							<table border="1" cellspacing="0" cellpadding="0">
-								<thead>
-									<tr>
-										<th>Abbreviated Descriptor</th>
-										<th>Grade Description</th>
-										<th>Numerical Descriptor</th>
-										<th>Grade Range</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>HD<br></td>
-										<td>High Distinction</td>
-										<td>7<br></td>
-										<td>≥ 85%<br></td>
-									</tr>
-									<tr>
-										<td>D<br></td>
-										<td>Distinction</td>
-										<td>6<br></td>
-										<td>75-84%<br></td>
-									</tr>
-									<tr>
-										<td>C<br></td>
-										<td>Credit</td>
-										<td>5<br></td>
-										<td>65-74%<br></td>
-									</tr>
-									<tr>
-										<td>P<br></td>
-										<td>Pass</td>
-										<td>4<br></td>
-										<td>50-64%<br></td>
-									</tr>
-									<tr>
-										<td>F3<br></td>
-										<td>Marginal Fail</td>
-										<td>3<br></td>
-										<td>45-49%<br></td>
-									</tr>
-									<tr>
-										<td>F2<br></td>
-										<td>Fail</td>
-										<td>2<br></td>
-										<td>25-44%<br></td>
-									</tr>
-									<tr>
-										<td>F1<br></td>
-										<td>Low Fail</td>
-										<td>1<br></td>
-										<td>0-24%<br></td>
-									</tr>
-									<tr>
-										<td>FS</td>
-										<td>Fail, Assessment Not Submitted</td>
-										<td>0</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>WF</td>
-										<td>Withdrawn with Failure</td>
-										<td>0</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>NP</td>
-										<td>Non-graded Pass</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>DE*</td>
-										<td>Deferred Exam</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>SU*</td>
-										<td>Supplementary Exam</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>EX</td>
-										<td>Exemption</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>NC</td>
-										<td>Not completed</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>RW</td>
-										<td>Result Withheld</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>W</td>
-										<td>Withdrawn</td>
-										<td>N/A</td>
-										<td>N/A</td>
-									</tr>
-								</tbody>
-							</table>
-						<br>
-				 <h3>What is GPA used for?</h3>
-				 <p>GPA is used to determine your success in your studies at Griffith College.</p>
-				 <p>For example, if you maintain a GPA ≥ 3.5 and you have met other requirements outlined the Program Progression Policy, your academic performance is considered satisfactory.</p>
-				 <p>If your GPA falls below a 3.5, you will be contacted by the College to discuss support strategies in the first instance.</p>
-				 <p>Students progressing to some Griffith University bachelor degree programs will be required to satisfy GPA entry requirements as outlined in the Program Fact Sheets section of the portal.</p>
-				 <p>Click on the link to view the <a href="http://policy.griffithcollege.edu.au/main.php?Students/Obligations%20and%20Expectations/Program%20Progression%20Policy" target="_blank" class="ui-link">Program Progression Policy</a>.</p>
-				 			<br>
-				 <h3>What grades are counted when calculating your GPA?</h3>
-				 <p>All grades obtained in a specific program (Certificate IV in University Foundation Studies, or Diploma, or Associate Degree) are counted.  This includes grades of Marginal Fail (F3), Fail (F2), Low Fail (F1), Fail Assessment Not Submitted (FS) and Withdrawn with Failure (WF).</p>
-				 <p>For example, if you completed a course and failed, and then subsequently did the course again and passed, both your fail and pass grades will be included in your GPA calculation.</p>
-				 			<br>
-				 <h3>Calculating your GPA</h3>
-				 <p>To calculate your GPA you will need to follow the steps listed below:</p>
-				 <ol style="text-align: left;">
-					 <li>Add the Numeric Value for each course for which you have been awarded a final grade, to get a total numeric value (including failed courses);</li>
-					 <li>Count the Total Number of Courses for which you have been awarded a final grade (including failed courses);</li>
-					 <li>Divide the Total Numeric Value by the Total Number of Courses; </li>
-					 <li>Round the result to two decimal places to arrive at your GPA!</li>
-				 </ol>
-				 <br>
-				 <h3>Example for calculating a GPA:</h3>
-				 <p>The table below provides an example of how to calculate a GPA:</p>
-
-				 	<table class="table2" border="1" cellspacing="0" cellpadding="0">
-						 <thead>
-						 <tr>
-							 <th>Course</th>
-							 <th>Grade</th>
-							 <th>Numeric Value</th>
-						 </tr>
-					 	</thead>
-						 <tbody>
-							 <tr>
-								 <td>1001MGT<br></td>
-								 <td>D</td>
-								 <td>6.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1201QBT<br></td>
-								 <td>F3</td>
-								 <td>3.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1004MGT<br></td>
-								 <td>F2</td>
-								 <td>2.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1101AFE<br></td>
-								 <td>HD</td>
-								 <td>7.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1201QBT<br></td>
-								 <td>C</td>
-								 <td>5.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1004MGT<br></td>
-								 <td>F1</td>
-								 <td>1.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1003MKT<br></td>
-								 <td>WF</td>
-								 <td>0.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1304AFE<br></td>
-								 <td>D</td>
-								 <td>6.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1303AFE<br></td>
-								 <td>C</td>
-								 <td>5.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1011IRL<br></td>
-								 <td>P</td>
-								 <td>4.0<br></td>
-							 </tr>
-							 <tr>
-								 <td>1003MKT<br></td>
-								 <td>P</td>
-								 <td>4.0<br></td>
-							 </tr>
-							 <tr>
-								 <td colspan="2">TOTAL NUMERIC VALUE:<br></td>
-							   <td>43<br></td>
-						   </tr>
-							 <tr>
-								 <td colspan="2"><span style="text-decoration: underline;">DIVIDED BY</span> TOTAL NUMBER OF COURSES:<br></td>
-							   <td>11<br></td>
-						   </tr>
-						 </tbody>
-				 	</table><br><br>
-
-					</div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-rounded-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 14px; top: 0px; display: block;"><div class="mCSB_dragger_bar"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
-			</div>
-		</div>
-		<div data-role="footer" id="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
-			<p style="font-family:&#39;Times New Roman&#39;, Times, serif">	&nbsp; © Kihoon Malcolm Weso</p>
-		</div>
-
-		<div style="display: none;" id="stTypePopup-placeholder"><!-- placeholder for stTypePopup --></div>
-
-		<div style="display: none;" id="coursePopup-placeholder"><!-- placeholder for coursePopup --></div>
-
-		<!-- Popup contents for the instruction -->
-		<div style="display: none;" id="instructionPopup-placeholder"><!-- placeholder for instructionPopup --></div>
-
-		<!-- Popup contents for the result -->
-		<div style="display: none;" id="informationPopup-placeholder"><!-- placeholder for informationPopup --></div>
-
-	<div class="ui-screen-hidden ui-popup-screen ui-overlay-inherit" id="stTypePopup-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate pop" id="stTypePopup-popup"><div data-role="popup" id="stTypePopup" data-history="false" class="ui-corner-all ui-popup ui-body-inherit ui-overlay-shadow" data-position-to="window" data-transition="pop"><p>Please select your student type.</p></div></div><div class="ui-screen-hidden ui-popup-screen ui-overlay-inherit" id="coursePopup-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate pop" id="coursePopup-popup"><div data-role="popup" id="coursePopup" data-history="false" class="ui-corner-all ui-popup ui-body-inherit ui-overlay-shadow" data-position-to="window" data-transition="pop"></div></div><div class="ui-popup-screen ui-overlay-a ui-screen-hidden" id="instructionPopup-screen"></div><div class="ui-popup-container pop ui-popup-hidden ui-popup-truncate" id="instructionPopup-popup"><div data-role="popup" id="instructionPopup" data-history="false" data-overlay-theme="a" class="ui-corner-all ui-popup ui-body-inherit ui-overlay-shadow" data-position-to="window" data-transition="pop">
-			<div data-role="content" class="ui-content ui-body-b" data-theme="b" role="main">
-				<p>
-					</p><h3>How to use this GPA calculator</h3>
-					<p>
-            1. Select your degree<br>
-            2. Select local or international student<br>
-            3. Input your current grades (For example: 2 HD; 2 D; 2 C; 2 P)<br>
-					</p>
-				<p>
-			</p></div>
-			<button onclick="$(&quot;#instructionPopup&quot;).popup(&quot;close&quot;)" class=" ui-btn ui-shadow ui-corner-all">Okay</button>
-		</div></div><div class="ui-screen-hidden ui-popup-screen ui-overlay-a" id="informationPopup-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate pop" id="informationPopup-popup"><div data-role="popup" id="informationPopup" data-history="false" data-overlay-theme="a" class="ui-corner-all ui-popup ui-body-inherit ui-overlay-shadow" data-position-to="window" data-transition="pop">
-			<div data-role="content" class="ui-content ui-body-b" data-theme="b" role="main">
-				<p>
-					</p><h2>How to project</h2>
-					<p>
-            </p><h3>How we calculate a GPA</h3>
-						<p>
-							e.g.
-						</p>
-						<h3>How to figure out the grades you need to earn in following trimesters for your desired GPA</h3>
-					<p></p>
-					<p>
-
-					</p>
-					<p>
-					</p>
-				<p></p>
-			</div>
-			<button onclick="$(&quot;#informationPopup&quot;).popup(&quot;close&quot;)" class=" ui-btn ui-shadow ui-corner-all">Okay</button>
-		</div></div></div>
-
-
-<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>
+        <div data-role="content" id="content" class="ui-content" role="main">
+            <h1>Welcome to the GPA Calculator</h1>
+            <p>Please enter your grades to calculate your GPA.</p>
+            <!-- Additional content can be added here -->
+        </div>
+        <div data-role="footer" id="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
+            <p style="font-family:'Times New Roman', Times, serif">© Kihoon Malcolm Weso</p>
+        </div>
+    </div>
+</body>
+</html>
